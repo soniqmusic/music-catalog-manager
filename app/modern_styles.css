@@ -1,0 +1,15 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #FF6F61;
+}
+
+.stButton>button {
+    background-color: #FF6F61;
+    color: white;
+    border-radius: 8px;
+}
