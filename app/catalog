@@ -1,0 +1,14 @@
+# Track List with Search
+st.subheader("Track List")
+search_term = st.text_input("Search by artist, broadcast, or song title")
+if search_term:
+    filtered_df = df[df.apply(lambda row: search_term.lower() in row.to_string().lower(), axis=1)]
+else:
+    filtered_df = df
+
+st.dataframe(filtered_df[["Artist/Band", "Broadcast/Concert", "Date", "Track Order", "Song Title"]])
+
+# Audio Playback
+st.subheader("Audio Player")
+selected_track = st.selectbox("Select a track to preview:", filtered_df["Song Title"].unique())
+st.audio(f"data/audio/{selected_track}.mp3", format="audio/mp3")
