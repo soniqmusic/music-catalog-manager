@@ -3,6 +3,9 @@ import pandas as pd
 from app.valuation.valuation import calculate_track_value
 from app.cleaning.cleaning import clean_incoming_data
 
+# Dynamically load the file in the Render environment
+file_path = os.path.join("data", "catalogfiles.csv")
+df = pd.read_csv(file_path)
 # Load master catalog
 master_path = "data/Master_Music_Catalog.csv"
 df_master = pd.read_csv(master_path)
