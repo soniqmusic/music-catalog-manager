@@ -1,0 +1,22 @@
+# Upload and Validate New Data
+st.subheader("Upload New Data")
+uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
+
+if uploaded_file:
+    incoming_data = pd.read_csv(uploaded_file)
+    st.write("Preview of Uploaded Data:")
+    st.dataframe(incoming_data)
+
+    # Validate and merge with master catalog
+    key_columns = ["Artist/Band", "Broadcast/Concert", "Date", "Song Title"]
+    merged = pd.merge(incoming_data, df, on=key_columns, how="left", indicator=True)
+    duplicates = merged[merged["_merge"] == "both"]
+    new_entries = merged[merged["_merge"] == "left_only"].drop(columns=["_merge"])
+
+    st.write(f"Found {len(duplicates)} duplicates.")
+    st.write(f"Adding {len(new_entries)} new entries.")
+
+    if st.button("Add New Entries"):
+        updated_catalog = pd.concat([df, new_entries]).drop_duplicates(subset=key_columns)
+        updated_catalog.to_csv(master_path, index=False)
+        st.success("New entries added successfully!")
