@@ -1,20 +1,25 @@
 import streamlit as st
 import pandas as pd
+from app.valuation.valuation import calculate_track_value
 
 # Load data
-master_path = "/content/Master_Music_Catalog.csv"
+master_path = "data/Master_Music_Catalog.csv"
 df = pd.read_csv(master_path)
 
-# Simulated Metrics
-total_tracks = len(df)
-total_streams = df["Streams"].sum() if "Streams" in df.columns else 0
-total_revenue = total_streams * 0.01  # Example $0.01 per stream
+# Simulated Streams
+if "Streams" not in df.columns:
+    df["Streams"] = [5000, 10000, 20000]  # Example streams for testing
 
-# Dashboard
+# Add Valuation Column
+df["Estimated Value (USD)"] = df.apply(
+    lambda row: calculate_track_value(row["Streams"], rarity="medium"),
+    axis=1
+)
+
+# Streamlit App
 st.title("Iconic Music Archive Dashboard")
-st.subheader("Overview")
 
-# Display key metrics
-st.metric("Total Tracks", total_tracks)
-st.metric("Total Streams", f"{total_streams:,}")
-st.metric("Total Revenue (USD)", f"${total_revenue:,.2f}")
+# Display DataFrame with Valuation
+st.subheader("Track Valuation")
+st.dataframe(df[["Artist/Band", "Song Title", "Streams", "Estimated Value (USD)"]])
+
