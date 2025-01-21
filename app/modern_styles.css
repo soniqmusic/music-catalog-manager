@@ -13,3 +13,6 @@ h1, h2, h3, h4, h5 {
     color: white;
     border-radius: 8px;
 }
+# Load custom styles
+with open("assets/modern_styles.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
