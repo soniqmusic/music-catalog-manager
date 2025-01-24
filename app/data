@@ -1,3 +1,5 @@
+install.packages("jsonlite")
+
 # Upload and Validate New Data
 st.subheader("Upload New Data")
 uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
@@ -20,3 +22,5 @@ if uploaded_file:
         updated_catalog = pd.concat([df, new_entries]).drop_duplicates(subset=key_columns)
         updated_catalog.to_csv(master_path, index=False)
         st.success("New entries added successfully!")
+
+"r.rpath.windows": "C:\\Program Files\\R\\R-4.2.0\\bin\\R.exe"
