@@ -24,3 +24,9 @@ if uploaded_file:
         st.success("New entries added successfully!")
 
 "r.rpath.windows": "C:\\Program Files\\R\\R-4.2.0\\bin\\R.exe"
+"C:\Users\georg\Refined_and_Cleaned_Music_Catalog_Data.csv"
+"C:\Users\georg\Downloads\Radio Broadcast Organized List.xlsx"
+"C:\Users\georg\Downloads\Restructured_Music_Catalog_Data.csv"
+"C:\Users\georg\Downloads\Setlist_Table.csv"
+"C:\Users\georg\Downloads\Broadcast_Table.csv"
+"C:\Users\georg\Downloads\Restructured_Music_Catalog_Data.csv"

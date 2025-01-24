@@ -1,4 +1,4 @@
-altair==5.5.0
+piopip install -r requirements.txtaltair==5.5.0
 anyio==4.7.0
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
