@@ -1,0 +1,14 @@
+name: music-catalog-manager
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - streamlit
+    - pandas
+    - numpy
+    - matplotlib
+    - scikit-learn
+    - torch
+    - torchvision
+    - torchaudio
+    - other-dependencies
