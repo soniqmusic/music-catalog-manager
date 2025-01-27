@@ -1,20 +1,13 @@
 name: Python package using Conda
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     - name: Set up Conda
       uses: conda-incubator/setup-miniconda@v2
@@ -24,29 +17,14 @@ jobs:
         environment-file: environment.yml
         activate-environment: music-catalog-manager
 
-    - name: Install Dependencies with Fallback
+    - name: Install dependencies
       run: |
-        echo "Installing dependencies using Conda..."
-        conda env update --file environment.yml || echo "Conda failed, trying pip"
-        pip install -r requirements.txt || echo "Pip failed, skipping..."
+        conda env update --file environment.yml --name music-catalog-manager || echo "Conda failed, falling back to pip."
+        pip install -r requirements.txt || echo "Pip installation failed, check requirements."
+        pip install pycairo  # Ensure missing dependencies are installed
 
-    - name: Validate Dependencies
+    - name: Run tests
       run: |
-        echo "Validating installed dependencies..."
-        pip check || echo "Dependency validation failed, review dependencies."
-
-    - name: Verify pytest Installation
-      run: |
-        echo "Verifying pytest is installed..."
-        pytest --version || echo "pytest is not installed, check dependencies."
-
-    - name: Run Tests
-      run: |
-        echo "Running tests..."
-        pytest --cov=.  # Run tests with coverage reporting
-
-    - name: Generate Lock File
-      run: |
-        echo "Generating conda-lock file for reproducibility..."
-        conda install -c conda-forge conda-lock
-        conda-lock lock --file environment.yml
+        eval "$(command conda 'shell.bash' 'hook')"
+        conda activate music-catalog-manager
+        pytest
