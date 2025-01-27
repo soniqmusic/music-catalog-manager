@@ -22,35 +22,12 @@ jobs:
         auto-update-conda: true
         python-version: 3.9
 
-    - name: Install Dependencies
+    - name: Install Dependencies from Lock File
       run: |
-        echo "Installing dependencies using conda-lock..."
-        conda install -c conda-forge conda-lock || exit 1
-        conda-lock install --name music-catalog-manager || exit 1
-
-    - name: Validate Dependencies
-      run: |
-        echo "Validating installed dependencies..."
-        pip check || echo "Warning: Dependency issues found, review required."
-
-    - name: Verify pytest Installation
-      run: |
-        echo "Checking if pytest is installed..."
-        pytest --version || echo "pytest not found, check dependencies."
+        conda install -c conda-forge conda-lock
+        conda-lock install --name music-catalog-manager
 
     - name: Run Tests
       run: |
-        echo "Running tests with pytest..."
-        pytest --cov=. || exit 1
-
-    - name: Generate Lock File
-      run: |
-        echo "Generating conda-lock file..."
-        conda-lock lock --file environment.yml || exit 1
-
-    - name: Upload Test Results (Optional)
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-results
-        path: coverage.xml
+        conda activate music-catalog-manager
+        pytest
