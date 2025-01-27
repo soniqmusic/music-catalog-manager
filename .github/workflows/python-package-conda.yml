@@ -20,9 +20,9 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
-        python-version: 3.10
-        environment-file: environment.yml
-        activate-environment: music-catalog-manager
+        python-version: 3.9  # Ensure this matches the Python version in environment.yml
+        environment-file: environment.yml  # Ensure this file is correctly set up
+        activate-environment: music-catalog-manager  # Matches the environment name in environment.yml
 
     - name: Install dependencies
       run: |
@@ -33,4 +33,4 @@ jobs:
     - name: Run tests
       run: |
         conda activate music-catalog-manager
-        pytest
+        pytest  # Adjust this command to run your tests
