@@ -1,7 +1,16 @@
-name: myenv
+name: music-catalog-manager
 channels:
   - defaults
 dependencies:
   - python=3.10
   - pip
-  - <other dependencies>
+  - pip:
+    - streamlit
+    - pandas
+    - numpy
+    - matplotlib
+    - scikit-learn
+    - torch
+    - altair
+    - watchdog
+    # Add any other dependencies here
