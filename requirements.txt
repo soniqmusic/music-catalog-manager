@@ -11,8 +11,8 @@ wcwidth==0.2.13
 webcolors==24.11.1
 webencodings==0.5.1
 websocket-client==1.8.0
-pandas
-openpyxl
+pandas==1.5.3
+openpyxl==3.1.2
 altair==5.5.0
 anyio==4.7.0
 argon2-cffi==23.1.0
@@ -62,5 +62,5 @@ threadpoolctl==3.5.0
 tinycss2==1.4.0
 toml==0.10.2
 torch==2.5.1+cpu
-torchvision
-torchaudio
+torchvision==0.15.3+cpu
+torchaudio==2.5.1+cpu
