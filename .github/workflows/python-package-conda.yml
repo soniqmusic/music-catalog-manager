@@ -20,7 +20,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
-        python-version: 3.9  # Specify your Python version here
+        python-version: 3.10  # Updated to match environment.yml
         environment-file: environment.yml  # Specify your Conda environment file here
         activate-environment: myenv  # Specify your Conda environment name here
 
