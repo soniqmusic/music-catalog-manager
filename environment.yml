@@ -6,12 +6,12 @@ dependencies:
   - python=3.9
   - pip
   - pip:
-    - streamlit
-    - pandas
-    - numpy
-    - matplotlib
-    - scikit-learn
-    - torch
-    - altair
-    - watchdog
-    # Add any other dependencies here
+    - streamlit>=1.0,<2.0
+    - pandas>=1.0,<3.0
+    - numpy>=1.21,<2.0
+    - matplotlib>=3.0,<4.0
+    - scikit-learn>=0.24,<2.0
+    - torch>=1.10,<3.0
+    - altair>=4.0,<6.0
+    - watchdog>=2.0,<3.0
+    - tornado>=6.0,<7.0  # Fixed to avoid mismatch issues

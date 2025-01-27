@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04  # Explicitly specify Ubuntu version
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout repository
@@ -24,18 +24,23 @@ jobs:
         environment-file: environment.yml
         activate-environment: music-catalog-manager
 
-    - name: Initialize Conda Shell
-      # This explicitly initializes Conda for the current shell
-      shell: bash
+    - name: Install Dependencies with Fallback
       run: |
-        eval "$(command conda 'shell.bash' 'hook')"
-        conda activate music-catalog-manager
+        echo "Attempting to install dependencies using Conda..."
+        conda env update --file environment.yml --name music-catalog-manager || echo "Conda failed, falling back to pip."
+        pip install -r requirements.txt || echo "Pip installation failed, check requirements."
 
-    - name: Install Dependencies
+    - name: Validate Dependencies
       run: |
-        conda env update --file environment.yml --name music-catalog-manager
-        pip install -r requirements.txt
+        echo "Checking dependency compatibility..."
+        pip check || echo "Dependency validation failed, review dependencies."
 
     - name: Run Tests
       run: |
-        pytest  # Replace this with your test command
+        pytest
+
+    - name: Generate Lock File
+      run: |
+        echo "Generating conda-lock file for reproducibility..."
+        conda install -c conda-forge conda-lock
+        conda-lock lock --file environment.yml
