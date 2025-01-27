@@ -1,33 +1,36 @@
-name: Python package
+name: Python package using Conda
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
-
-    - name: Install Miniconda
+    - name: Set up Conda
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
-        python-version: 3.8
-
-    - name: Create conda environment
-      run: conda env create -f environment.yml
-
-    - name: Activate conda environment
-      run: conda activate myenv
+        python-version: 3.10  # Updated to match environment.yml
+        environment-file: environment.yml  # Specify your Conda environment file here
+        activate-environment: myenv  # Specify your Conda environment name here
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: |
+        conda env update --file environment.yml --name myenv
+        conda activate myenv
+        pip install -r requirements.txt
 
     - name: Run tests
-      run: pytest
+      run: |
+        conda activate myenv
+        pytest  # Adjust this command to run your tests
