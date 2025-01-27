@@ -26,18 +26,24 @@ jobs:
 
     - name: Install Dependencies with Fallback
       run: |
-        echo "Attempting to install dependencies using Conda..."
-        conda env update --file environment.yml --name music-catalog-manager || echo "Conda failed, falling back to pip."
-        pip install -r requirements.txt || echo "Pip installation failed, check requirements."
+        echo "Installing dependencies using Conda..."
+        conda env update --file environment.yml || echo "Conda failed, trying pip"
+        pip install -r requirements.txt || echo "Pip failed, skipping..."
 
     - name: Validate Dependencies
       run: |
-        echo "Checking dependency compatibility..."
+        echo "Validating installed dependencies..."
         pip check || echo "Dependency validation failed, review dependencies."
+
+    - name: Verify pytest Installation
+      run: |
+        echo "Verifying pytest is installed..."
+        pytest --version || echo "pytest is not installed, check dependencies."
 
     - name: Run Tests
       run: |
-        pytest
+        echo "Running tests..."
+        pytest --cov=.  # Run tests with coverage reporting
 
     - name: Generate Lock File
       run: |
