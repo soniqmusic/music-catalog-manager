@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Explicitly specify the version
 
     steps:
     - name: Checkout repository
@@ -20,9 +20,15 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
-        python-version: 3.9  # Ensure this matches the Python version in environment.yml
-        environment-file: environment.yml  # Ensure this file is correctly set up
-        activate-environment: music-catalog-manager  # Matches the environment name in environment.yml
+        python-version: 3.9  # Matches environment.yml
+        environment-file: environment.yml
+        activate-environment: music-catalog-manager  # Matches environment.yml
+
+    - name: Initialize Conda
+      # Run 'conda init' explicitly before using 'conda activate'
+      run: |
+        eval "$(command conda 'shell.bash' 'hook')"
+        conda init bash
 
     - name: Install dependencies
       run: |
@@ -33,4 +39,4 @@ jobs:
     - name: Run tests
       run: |
         conda activate music-catalog-manager
-        pytest  # Adjust this command to run your tests
+        pytest  # Adjust this command as needed
