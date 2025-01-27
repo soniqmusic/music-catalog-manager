@@ -1,30 +1,56 @@
-name: Python package using Conda
+name: CI with Conda and Locked Dependencies
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-    - name: Set up Conda
+    - name: Set up Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
         python-version: 3.9
-        environment-file: environment.yml
-        activate-environment: music-catalog-manager
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
-        conda env update --file environment.yml --name music-catalog-manager || echo "Conda failed, falling back to pip."
-        pip install -r requirements.txt || echo "Pip installation failed, check requirements."
-        pip install pycairo  # Ensure missing dependencies are installed
+        echo "Installing dependencies using conda-lock..."
+        conda install -c conda-forge conda-lock || exit 1
+        conda-lock install --name music-catalog-manager || exit 1
 
-    - name: Run tests
+    - name: Validate Dependencies
       run: |
-        eval "$(command conda 'shell.bash' 'hook')"
-        conda activate music-catalog-manager
-        pytest
+        echo "Validating installed dependencies..."
+        pip check || echo "Warning: Dependency issues found, review required."
+
+    - name: Verify pytest Installation
+      run: |
+        echo "Checking if pytest is installed..."
+        pytest --version || echo "pytest not found, check dependencies."
+
+    - name: Run Tests
+      run: |
+        echo "Running tests with pytest..."
+        pytest --cov=. || exit 1
+
+    - name: Generate Lock File
+      run: |
+        echo "Generating conda-lock file..."
+        conda-lock lock --file environment.yml || exit 1
+
+    - name: Upload Test Results (Optional)
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: coverage.xml
