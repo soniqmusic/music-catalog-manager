@@ -4,17 +4,12 @@ channels:
   - defaults
 dependencies:
   - python=3.9
-  - pip
-  - pip:
-    - streamlit
-    - pandas
-    - numpy
-    - matplotlib
-    - scikit-learn
-    - torch
-    - altair
-    - watchdog
-    - pytest
-    - pytest-cov
-    - requests
-    - tornado
+  - pip>=22.0,<23.0  # Ensure pip is up-to-date
+  - streamlit>=1.0,<2.0  # Streamlit app framework
+  - pandas>=1.4,<2.0  # Data manipulation library (updated to latest minor version)
+  - numpy>=1.21,<2.0  # Numerical computing library
+  - matplotlib>=3.5,<4.0  # Plotting library (updated to latest minor version)
+  - scikit-learn>=1.0,<2.0  # Machine learning library (updated to latest minor version)
+  - torch>=1.12,<2.0  # Deep learning library (updated to latest minor version)
+  - altair>=4.2,<5.0  # Declarative visualization library (updated to latest minor version)
+  - watchdog>=2.1,<3.0  # File system monitoring (updated to latest minor version)
