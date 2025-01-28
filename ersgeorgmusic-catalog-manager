@@ -1,0 +1,251 @@
+[33mcommit 3da7646695c94aac4a2e5c580bafd59548e50747[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 7f5a09e b22cf70
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Mon Jan 27 17:51:20 2025 -0800
+
+    Resolve conflicts in requirements.txt
+
+[33mcommit 7f5a09e4c52b3beae6bc3b68c86fcb3eb5a5b3a4[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Mon Jan 27 16:08:19 2025 -0800
+
+    Update environment.yml, requirements.in, requirements.txt, and GitHub Actions workflow
+
+[33mcommit b22cf70e6b4e085c14eff362b22fbb6192b50782[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Mon Jan 27 13:43:44 2025 -0800
+
+    comprehensive update requirements.txt
+
+[33mcommit 19c3205113ad5b86eb92b979a5b3953d1d110c65[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Mon Jan 27 10:59:51 2025 -0800
+
+    Update GitHub Actions workflow and environment.yml
+
+[33mcommit 22880a6c2d25fea3ef531d17bb82624c37de6fd6[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Mon Jan 27 10:43:54 2025 -0800
+
+    Remove types-python-dateutil from requirements.txt
+
+[33mcommit fc2649a2d721412cb64db46611a024f301cdeb33[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 23:42:36 2025 -0800
+
+    Add GitHub Actions workflow for Conda with dependency locking
+
+[33mcommit b568b4def54786bffc8fe8ee721aa6d1c5bf2045[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 23:29:09 2025 -0800
+
+    Update GitHub Actions workflow to use conda-lock
+
+[33mcommit 27950ff910f7ed60bd5e362fb11377238c0eee34[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 22:49:47 2025 -0800
+
+    Enhance error handling and dependency locking for CI
+
+[33mcommit 4baaba25578d1190fc365ba57841185bc3752b41[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 22:31:49 2025 -0800
+
+    Update GitHub Actions workflow for Conda with dependency installation and tests
+
+[33mcommit 5b7411fb02e9f9d4038e0cf8a9125b072d148681[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 19:31:34 2025 -0800
+
+    Update GitHub Actions workflow to use Conda for Python package setup
+
+[33mcommit 20017db7f5420d0b49253961605e69b4c0040b98[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 18:54:16 2025 -0800
+
+    Enhance dynamic dependency updates and testing for GitHub Actions
+
+[33mcommit e1e1f68db2bc3ac501027d8635fcd6e5810e8479[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 18:42:57 2025 -0800
+
+    Enhance dependency handling and compatibility for GitHub Actions
+
+[33mcommit b9780881a22932985829f912fe9d37666738dbc6[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 18:27:35 2025 -0800
+
+    Fix Conda shell initialization for GitHub Actions
+
+[33mcommit 56a45e7b03c8e8aeaa8cf88de48d8bb60bd4235c[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 18:10:57 2025 -0800
+
+    Fix Conda activation issue in GitHub Actions workflow
+
+[33mcommit 4c93fa25ee987679f5100ca1d72afc499fcc01ce[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 17:55:22 2025 -0800
+
+    Update environment.yml and GitHub Actions workflow for Python 3.9
+
+[33mcommit 08199e442e44c53f43f054366dae54abbed95922[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 17:32:21 2025 -0800
+
+    Update environment.yml for Python 3.9
+
+[33mcommit efbc7b464252b84cd96549c17f4627091852bc6b[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 17:14:44 2025 -0800
+
+    Trigger Dependabot
+
+[33mcommit 36057a604fb4915f4c6405ac8adafb054b676d1b[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:58:29 2025 -0800
+
+    Update environment.yml
+
+[33mcommit 2eecd17c7c8e00e6982f8bf08a22dc6324e5af1c[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:54:13 2025 -0800
+
+    Update python-package-conda.yml
+
+[33mcommit 271404a40de3fb6c707785f5de27b2c8cf410516[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:45:43 2025 -0800
+
+    Update environment.yml
+
+[33mcommit 3116920d5c2487159dbb649ca53903c46367f4f5[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:37:14 2025 -0800
+
+    Update python-package-conda.yml
+
+[33mcommit 409349fcd91450dc794aa418529520496b3f3ccb[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:33:44 2025 -0800
+
+    Update environment.yml
+
+[33mcommit e0007af7661d4365015881fdb4f86af8d72c1676[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:20:50 2025 -0800
+
+    Resolve merge conflict in GitHub Actions workflow file
+
+[33mcommit ee0a1eebe38b08c8d30c4ed2c233dfe664a4c147[m
+Merge: 26c5442 bff7397
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:12:17 2025 -0800
+
+    Resolve merge conflict in GitHub Actions workflow file
+
+[33mcommit 26c54423e8e77f27aa253b6e8cd28426fac5ceb6[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 16:07:06 2025 -0800
+
+    Update Python version to 3.10 and align dependencies
+
+[33mcommit bff7397541e86216b98be3a2172286992a272a99[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 06:21:32 2025 -0800
+
+    Update python-package-conda.yml
+
+[33mcommit b9b63d247d9669d520d90e61d1af293eca8682e3[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 05:53:16 2025 -0800
+
+    Create environment.yml
+
+[33mcommit 23919d8edba6c10e95db048a6331ad22a86362fc[m
+Merge: c02ff99 758c252
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 05:44:40 2025 -0800
+
+    Resolve merge conflicts
+
+[33mcommit c02ff998e57cb42bde1777e331cc8d82b4452a18[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 05:31:34 2025 -0800
+
+    Finalize setup and dependencies
+
+[33mcommit 758c2521a78ffdc52b2fbcbb58fd41ccc5182110[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 05:20:50 2025 -0800
+
+    Update requirements.txt
+
+[33mcommit ccb64e4b88d441515dcac81e28ea393ca486e705[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 05:15:55 2025 -0800
+
+    Update python-package-conda.yml
+
+[33mcommit 214b88ec86da8f12098ff6753c110fb20bd64265[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 05:12:07 2025 -0800
+
+    Update python-package-conda.yml
+
+[33mcommit aa402c7e3b2c6a586dc0dd1a011e2ed9c14b2f84[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 02:59:54 2025 -0800
+
+    Resolve merge conflict in python-package-conda.yml
+
+[33mcommit 3fce6f92501c9eee033fd04319f2825b17ce8ae5[m
+Merge: 02289db a8bdbe0
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 02:50:11 2025 -0800
+
+    Resolve merge conflict in python-package-conda.yml
+
+[33mcommit 02289db98af4641dbe24d0107730db67d2b1030e[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 02:38:31 2025 -0800
+
+    Add GitHub Actions workflow for Conda
+
+[33mcommit a8bdbe03ee5b9ec56f35e2b98ee6df1f227bd6f4[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 02:18:03 2025 -0800
+
+    Create python-package-conda.yml
+
+[33mcommit 04c1e8ad9ad0ddac6882f19de70cfda2b82e6084[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 02:17:26 2025 -0800
+
+    Delete .github
+
+[33mcommit 1c67884c712a55f930b4acbbb93d5694b0f4d1be[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 01:55:53 2025 -0800
+
+    Add Dependabot configuration
+
+[33mcommit 4d375a8deb5c1a9281901870b528b02e838535d8[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Sun Jan 26 00:58:14 2025 -0800
+
+    Create .github
+
+[33mcommit 36d7e9cc24c2502fa3d402a3c2c1a38662cff251[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Fri Jan 24 09:56:58 2025 -0800
+
+    commit
+
+[33mcommit f4f1d7d297e789a042929f9596fa533b2505f40a[m
+Author: soniqmusic <lumientertainmentla@gmail.com>
+Date:   Thu Jan 23 21:45:21 2025 -0800
+
+    Add spreadsheets and script to process them
+
+[33mcommit ba42dbefe06a0d361f1309
